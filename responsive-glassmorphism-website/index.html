@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It's Raining</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <section>
+      <header>
+        <a href="#" class="logo">It's Raining.</a>
+        <div class="toggle" onclick="menuToggle();"></div>
+      </header>
+      <div class="glass"></div>
+      <div class="content">
+        <h2>Hapiness...<br><span>Crystal clear ocean water.</h2>
+      </div>
+      <video src="images/rain.mp4"autoplay muted loop></video>
+      <ul class="sci">
+        <li style="--i:1"><a href="#">Snapchat</a></li>
+        <li style="--i:2"><a href="#">Twitter</a></li>
+        <li style="--i:3"><a href="#">Instgram</a></li>
+      </ul>
+      <ul class="navigation">
+        <li style="--i:1"><a href="#">Home</a></li>
+        <li style="--i:2"><a href="#">About</a></li>
+        <li style="--i:3"><a href="#">Tour</a></li>
+        <li style="--i:4"><a href="#">Contact</a></li>
+      </ul>
+    </section>
+    <script type="text/javascript">
+      function menuToggle(){
+        const toggleMenu = document.querySelector('.toggle');
+        const section = document.querySelector('section');
+        toggleMenu.classList.toggle('active')
+        section.classList.toggle('active')
+      }
+    </script>
+  </body>
+</html>

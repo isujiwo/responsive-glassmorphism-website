@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+section{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  overflow: hidden;
+}
+header{
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  padding: 40px 100px;
+  z-index: 100;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+header .logo{
+  position: relative;
+  font-size: 2em;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, .1);
+  transition: .5s;
+}
+header .toggle{
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background:url(images/menu.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+header .toggle.active{
+  background:url(images/close.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  cursor: pointer;
+}
+header .toggle::before{
+  content: 'Menu';
+  position: absolute;
+  right: 45px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  padding: 2px 5px;
+  background-color: #fff;
+  color: #111;
+}
+header .toggle.active::before{
+  content: 'Close';
+}
+section video{
+  position:absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.glass{
+  position: absolute;
+  top:0;
+  left:0;
+  width: 40%;
+  height: 100%;
+  z-index: 1;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  -o-backdrop-filter: blur(15px);
+  -moz-backdrop-filter: blur(15px);
+  box-shadow: 10px 0 15px rgba(0, 0, 0, .5);
+  transition: .5s;
+  transition-delay: 1s;
+}
+section.active .glass{
+  width: 100%;
+  backdrop-filter: blur(20px);
+  transition-delay: 0s;
+}
+section .content{
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  transition: .5s;
+  transition-delay: 1s;
+}
+section.active .content{
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-200px);
+  transition-delay: 0s;
+
+}
+section .content h2{
+  position: relative;
+  color: #fff;
+  font-size: 10vw;
+  line-height: 0.55;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+  font-family: 'Dancing Script', cursive;
+}
+section .content h2 span{
+  font-size: 0.2em;
+  font-weight: 300;
+  letter-spacing: 5px;
+  background: #fff;
+  color: #111;
+  padding: 0 10px;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+  text-transform: uppercase;
+}
+section .sci{
+  position: absolute;
+  bottom: 40px;
+  right: 100px;
+  display: flex;
+  z-index: 100;
+}
+section .sci li{
+  list-style: none;
+  margin: 5px;
+  padding: 0 6px;
+  background: #fff;
+  color: #111;
+  transition: .5s;
+  transition-delay: calc(.1s * var(--i));
+}
+section.active .sci li{
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100px);
+}
+section .sci li a {
+  color: #111;
+  text-decoration: none;
+  display: inline-block;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size:12px;
+  text-transform: uppercase;
+}
+section .navigation{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  z-index: 100;
+}
+section .navigation li {
+  list-style:none;
+  text-align: center;
+  margin: 15px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: .5s;
+  transform: translateX(200px);
+  transition-delay: calc(.1s * var(--i));
+}
+section.active .navigation li{
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+section .navigation li a{
+  color:#111;
+  font-size: 1.5em;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-weight: 300;
+  text-transform: uppercase;
+  background-color: #fff;
+  padding: 4px 10px;
+  display: inline-block;
+  transition: .3s;
+}
+section .navigation li a:hover{
+  background: #111;
+  color: #fff;
+  letter-spacing: 10px;
+  text-transform: none;
+}
+@media (max-width:991px){
+  header{
+    padding: 20px;
+  }
+  header .logo{
+    font-size:3vh
+  }
+  section .sci{
+    bottom: 20px;
+    right: 20px;
+  }
+  .glass{
+    width: 60%;
+  }
+  section .content h2{
+    font-size: 11vh;
+  }
+  section .content h2 span{
+    font-size: .12em;
+    letter-spacing: 2px;
+    padding: 0 5px;
+  }
+}
